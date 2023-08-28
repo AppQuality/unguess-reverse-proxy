@@ -4,7 +4,11 @@ services:
   reverse:
     container_name: reverse
     hostname: reverse
-    image: nginx
+    build:
+      context: image
+      dockerfile: Dockerfile
+      args:
+        - ENABLED_MODULES=subs-filter
     ports:
       - 80:80
       - 443:443
