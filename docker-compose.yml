@@ -3,6 +3,7 @@ version: "3"
 services:
   reverse:
     container_name: reverse
+    restart: always
     hostname: reverse
     build:
       context: image
