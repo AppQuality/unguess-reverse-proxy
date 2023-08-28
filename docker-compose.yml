@@ -7,10 +7,8 @@ services:
     build:
       context: image
       dockerfile: Dockerfile
-      args:
-        - ENABLED_MODULES=subs-filter
     ports:
       - 80:80
       - 443:443
-    volumes:
-      - ./nginx:/etc/nginx
+    environment:
+      - UNGUESS_URL=https://dev.unguess.io
